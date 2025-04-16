@@ -1,9 +1,11 @@
 
+import HeroBlock from "./blocks/HeroBlock";
+
 
 const RootPage = () => {
   return (
-    <div><h1>Home page</h1></div>
-  )
+    <HeroBlock/>
+  );
 }
 
 export default RootPage

@@ -1,10 +1,10 @@
 import "./globals.css";
-
 import { Inter } from "next/font/google";
-
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import { Theme } from "@radix-ui/themes";
+import { ThemeProvider } from "@/compnents/theme-provider";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,7 +31,14 @@ const RootLayout = (props: PropsWithChildren) => {
   return (
     <html>
       <body className={inter.className}>
-        <Theme appearance="dark">{props.children}</Theme>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Theme accentColor="indigo">{props.children}</Theme>
+        </ThemeProvider>
       </body>
     </html>
   );
